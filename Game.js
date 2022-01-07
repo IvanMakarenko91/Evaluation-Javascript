@@ -73,3 +73,37 @@ const hasard = function() {
     activePlayer.message.innerHTML = CURRENT_SCORE_PREFIX + currentScore;
   }
 }
+
+const hasard2 = function() {
+  random = chiffreAleatoire();
+  document.getElementById('imgage').setAttribute("src","images/dice-" + random + ".png"); // Image affiché en fonction du nombre aléatoire
+  if (random == 1) { // Si le chiffre aleatoire tombe sur 1, on change de joueur.
+    currentScore = 0;
+    if( currentPlayer == 1 ){
+      playerTwo.message.innerHTML = "A mon tour !";
+      playerOne.message.innerHTML = CURRENT_SCORE_PREFIX + 0;
+      playerTwo.name.style.color = ACTIVE_PLAYER_NAME_COLOR;
+      playerOne.name.style.color = INACTIVE_PLAYER_NAME_COLOR;
+      currentPlayer = 2;
+    }
+    else{
+      playerOne.message.innerHTML = "A mon tour !";
+      playerTwo.message.innerHTML = CURRENT_SCORE_PREFIX + 0;
+      currentPlayer = 1;
+      playerOne.name.style.color = ACTIVE_PLAYER_NAME_COLOR;
+      playerTwo.name.style.color = INACTIVE_PLAYER_NAME_COLOR;
+    }
+  }
+  else { // Si le chiffre generé est different de 1, on accumule le score.
+    currentScore += random;
+    if( currentPlayer == 1 ){
+      playerOne.message.innerHTML = CURRENT_SCORE_PREFIX + currentScore;
+    }
+    else{
+      playerTwo.message.innerHTML = CURRENT_SCORE_PREFIX + currentScore;
+    }
+  }
+}
+
+// à chaque click sur le bouton "rolldice", la fontion hasard s'executera.
+jetede.addEventListener('click',hasard2)
