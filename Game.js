@@ -18,3 +18,9 @@ let currentScore = 0;
 // Création d'objets aux classes.
 let playerOne = new Player( "Player One" );
 let playerTwo = new Player( "Player Two" );
+
+// DOM recuperation des elements (sélécteurs).
+const jetede = document.getElementById('rolldice'); // Lance le dé quand on clic sur rolldice
+const sauvegarder = document.getElementById('sauvegarder'); // Boutton HOLD
+const newGame = document.getElementById('newGame'); // Boutton New Game
+const result = document.getElementById('resultat'); // Score affiché
