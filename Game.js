@@ -40,3 +40,12 @@ playerTwo.score = document.getElementById('playerTwoScore');
 let activePlayer = playerOne;
 
 let currentPlayer = 1;
+
+// Fonction generant un chiffre aléatoire entre 1et 6
+const chiffreAleatoire = function() {
+  // Crée un chiffre aleatoire compris entre 1 et 6.
+  const aleatoire = (Math.random() * 6) +1
+  // La fonction Math.trunc() retourne la troncature entière d'un nombre en retirant sa partie décimale.
+  const resultat = Math.trunc(aleatoire)
+  return resultat
+}
