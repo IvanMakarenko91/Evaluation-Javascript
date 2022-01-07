@@ -107,3 +107,17 @@ const hasard2 = function() {
 
 // à chaque click sur le bouton "rolldice", la fontion hasard s'executera.
 jetede.addEventListener('click',hasard2)
+
+//  JQuery utilisé pour l'evenement de "click" sur le boutton 'hold' afin de sauvegarder le score.
+$(document).ready(function(){
+
+  $('#sauvegarder').click(function(){
+    activePlayer.totalScore += currentScore; 
+    activePlayer.score.innerText = TOTAL_SCORE_PREFIX + activePlayer.totalScore;
+    if (activePlayer.totalScore >= 100) {
+      result.innerHTML = activePlayer.displayName + " Win !"
+    }
+    switchActivePlayer();
+    
+  })
+})
