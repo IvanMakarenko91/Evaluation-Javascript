@@ -121,3 +121,17 @@ $(document).ready(function(){
     
   })
 })
+
+// Fonction permettant de remettre à 0 le score.
+const resetAll = function(){
+  playerOne.totalScore = 0; 
+  playerTwo.totalScore = 0; 
+  playerOne.score.innerText = TOTAL_SCORE_PREFIX + 0;
+  playerTwo.score.innerText = TOTAL_SCORE_PREFIX + 0;
+  activePlayer = playerTwo;
+  switchActivePlayer();
+}
+// à chaque click sur le bouton "new Game", la partie sera recommencer à 0.
+newGame.addEventListener('click',resetAll)
+
+resetAll();
