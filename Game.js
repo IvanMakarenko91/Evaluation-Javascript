@@ -24,3 +24,19 @@ const jetede = document.getElementById('rolldice'); // Lance le dé quand on cli
 const sauvegarder = document.getElementById('sauvegarder'); // Boutton HOLD
 const newGame = document.getElementById('newGame'); // Boutton New Game
 const result = document.getElementById('resultat'); // Score affiché
+
+playerOne.name = document.getElementById('playerOneName');
+playerTwo.name = document.getElementById('playerTwoName');
+playerOne.name.style.color = ACTIVE_PLAYER_NAME_COLOR;
+playerTwo.name.style.color = INACTIVE_PLAYER_NAME_COLOR;
+playerOne.name.innerHTML = playerOne.displayName;
+playerTwo.name.innerHTML = playerTwo.displayName;
+
+playerOne.message = document.getElementById('playerOneMessage'); 
+playerTwo.message = document.getElementById('playerTwoMessage');
+playerOne.score = document.getElementById('playerOneScore');
+playerTwo.score = document.getElementById('playerTwoScore');
+
+let activePlayer = playerOne;
+
+let currentPlayer = 1;
