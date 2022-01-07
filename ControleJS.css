@@ -1,0 +1,8 @@
+body {
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.938), white);
+  font-family: lato;
+  font-size: 1.5em;
+}
+.gauche {
+  color: white;
+}
