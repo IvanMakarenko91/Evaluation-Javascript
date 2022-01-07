@@ -59,3 +59,17 @@ const switchActivePlayer = function() {
   activePlayer.message.innerHTML = CURRENT_SCORE_PREFIX + "0";
   activePlayer.name.style.color = ACTIVE_PLAYER_NAME_COLOR;
 }
+
+// Fonction faisant apparaitre la face du dé correspondant au chiffre aleatoire.
+const hasard = function() {
+  random = chiffreAleatoire();
+  document.getElementById('imgage').setAttribute("src","images/dice-" + random + ".png");
+  if (random == 1) {
+    switchActivePlayer(); // Fonction permettant de changer de joueur.
+    activePlayer.message.innerHTML = "A mon tour !";
+  }
+  else {
+    currentScore += random;
+    activePlayer.message.innerHTML = CURRENT_SCORE_PREFIX + currentScore;
+  }
+}
