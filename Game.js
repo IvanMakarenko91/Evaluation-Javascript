@@ -49,3 +49,13 @@ const chiffreAleatoire = function() {
   const resultat = Math.trunc(aleatoire)
   return resultat
 }
+
+// Fonction switch permettant de passer du joueur 1 au joueur 2 avec la bonne couleur afficher.
+const switchActivePlayer = function() {
+  activePlayer.name.style.color = INACTIVE_PLAYER_NAME_COLOR;
+  currentScore = 0;
+  activePlayer.message.innerHTML = CURRENT_SCORE_PREFIX + "0";
+  activePlayer = activePlayer == playerOne ? playerTwo : playerOne; // Condition permettant de passer du joueur 1 à 2
+  activePlayer.message.innerHTML = CURRENT_SCORE_PREFIX + "0";
+  activePlayer.name.style.color = ACTIVE_PLAYER_NAME_COLOR;
+}
